@@ -1,117 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+    //Text view which indicates the Team
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:paddingHorizontal="10dp"
+    android:orientation="horizontal"
+    android:background="@color/teal_200">
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:text="Team Red"
+        android:gravity="center"
         android:textSize="20sp"
         android:textColor="#EC0519"
         android:textStyle="bold"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        />
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="right|center"
+
+        android:layout_height="match_parent"
         android:text="Team Blue"
         android:textStyle="bold"
         android:textSize="20sp"
         android:textColor="#065FF4"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        />
+</LinearLayout>
 
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="40dp"
+    android:orientation="horizontal">
+//inline styles are added to textview like fontcolor, fontsize,background color
+    //
     <TextView
         android:id="@+id/team_score_red"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        style="@style/regulartext"
+
         android:text="0"
         android:textColor="#000000"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/textView2"
-        app:layout_constraintStart_toStartOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        android:textSize="48sp"
+        android:textStyle="bold" />
+
     <TextView
         android:id="@+id/team_score_blue"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:gravity="right"
         android:text="0"
+        style="@style/regulartext"
         android:textColor="#000000"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        android:textSize="48sp"
+        android:textStyle="bold" />
+</LinearLayout>
 
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="2"
+    android:layout_margin="10dp">
     <Button
         android:id="@+id/buttonUp_red"
-        android:layout_width="120dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:layout_marginStart="16dp"
-        android:background="#EC0519"
+       android:layout_weight="1"
         android:text="Up"
-        android:textColor="#fff"
+        android:layout_margin="5dp"
+
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/team_score_red" />
+        />
     <Button
         android:id="@+id/buttonUp_blue"
-        android:layout_width="120dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:background="#065FF4"
-        android:textColor="#fff"
-        android:text="Up"
-        android:layout_marginTop="64dp"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/team_score_blue" />
+        android:layout_weight="1"
 
-    <Button
-        android:id="@+id/buttonDown_red"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="#EC0519"
-        android:text="Down"
-        android:textColor="#fff"
+        android:layout_margin="5dp"
+
+        android:text="Up"
+
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/buttonUp_red"
-        app:layout_constraintStart_toStartOf="@+id/buttonUp_red"
-        app:layout_constraintTop_toBottomOf="@+id/buttonUp_red" />
-    <Button
-        android:layout_width="120dp"
+       />
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Down"
-        android:id="@+id/buttonDown_blue"
-        android:background="#065FF4"
-        android:textColor="#fff"
-        android:textSize="20sp"
-        android:layout_marginTop="16dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/buttonUp_blue"
-        app:layout_constraintStart_toStartOf="@+id/buttonUp_blue"
-        app:layout_constraintTop_toBottomOf="@+id/buttonUp_blue" />
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_margin="10dp">
+        <Button
+            android:id="@+id/buttonDown_red"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+
+            android:text="Down"
+            android:layout_margin="5dp"
+
+            android:textSize="20sp"
+            android:textStyle="bold"
+            />
+        <Button
+            android:id="@+id/buttonDown_blue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+
+            android:layout_margin="5dp"
+
+            android:text="Down"
+
+            android:textSize="20sp"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
+    //Buttons that do increment and decrement values
+
+
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -123,14 +144,17 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonDown_red">
 
+        //Text that represents the points
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Points increase by: "
             android:textColor="#000000"
             android:textSize="16sp"
+            style="@style/regulartext"
             android:textStyle="bold" />
 
+        //Radio buttons to change scores
         <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -162,5 +186,4 @@
                 android:textStyle="bold" />
         </RadioGroup>
     </LinearLayout>
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</LinearLayout>

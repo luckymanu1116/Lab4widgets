@@ -1,16 +1,22 @@
+//Name:Manoj Kumar Reddy Guttikonda ID: A00258697
+//Name: Naresh Kamanaboyana ID: A00257027
+//Name: Sama Manikanta Reddy ID: A00255242
+
 package com.example.lab4widgets;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.example.lab4widgets.R;
+
 public class MainActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener, View.OnClickListener {
     private TextView teamScoreRedTextView;
     private TextView teamScoreBlueTextView;
 
+    //creating two teams Red and Blue teams
     private int incrementBy;
     private int teamRedScore;
     private int teamBlueScore;
@@ -20,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // initial team scores are 0
         teamRedScore = 0;
         teamBlueScore = 0;
 
@@ -65,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     @Override
     public void onClick(View view) {
         int id = view.getId();
-        //according to the buttons clicked the respective functions are performed
+        //according to the buttons clicked the respective functions are performed incerement and decrement
         switch (id){
             case R.id.buttonUp_blue:
                 teamBlueScore += incrementBy;
